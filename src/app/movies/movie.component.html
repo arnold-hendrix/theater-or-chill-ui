@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="flex-items">
+                <div class="text-dark">
+                    <h5><strong>In Theaters</strong></h5>
+                </div>
+                <div><a href="#">view all</a></div>
+            </div>
+
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let movie of nowPlayingMovies">
+                    <ng-template carouselSlide [id]="movie.title">
+                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title">
+                        <!-- <a [routerLink]="['/nowPlayingMovies', movie.title]">
+                    <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title">
+                  </a> -->
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="flex-items">
+                <div class="text-dark">
+                    <h5><strong>Coming Next Week</strong></h5>
+                </div>
+                <div><a href="#">view all</a></div>
+            </div>
+
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let movie of upcomingMovies">
+                    <ng-template carouselSlide [id]="movie.title">
+                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+
+        </div>
+    </div>
+
+    <div class="container-fluid component-margin">
+        <div class="row">
+            <div class="flex-items">
+                <div class="text-dark">
+                    <h5><strong>Coming Soon</strong></h5>
+                </div>
+                <div><a href="#">view all</a></div>
+            </div>
+
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let movie of upcomingMovies">
+                    <ng-template carouselSlide [id]="movie.title">
+                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+
+        </div>
+    </div>
+</div>

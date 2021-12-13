@@ -1,0 +1,78 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  padding-bottom: 8px;
+}
+
+.brand-font {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.component-margin {
+  margin-bottom: 10px;
+}
+
+footer {
+  height: 250px;
+}
+
+.footer-menu {
+  display: inline-block;
+}
+
+.form-width {
+  min-width: 0;
+  width: 500px;
+  display: inline;
+}
+
+header {
+  margin-bottom: 12px;
+}
+
+h6 {
+  padding: 15px 0px 0px 575px;
+}
+
+.icons8-img {
+  display: none;
+}
+
+.input-form-position {
+  position: relative;
+  left: 10px;
+}
+
+.list-menu {
+  position: relative;
+  right: 75px;
+  top: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.menu-item:hover {
+  color: white;
+}
+
+.nav-container {
+  display: inline-block;
+}
+
+.navbar-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.search-container {
+  justify-content: space-between;
+}
+
+.search-form {
+  position: relative;
+  left: 20px;
+  top: 5px;
+}
