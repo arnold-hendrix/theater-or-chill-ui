@@ -8,3 +8,5 @@ I have worked on some of the routes. There is a bit more work left to do and som
   - I need to finish the cart, account, movie detail, about and contact us routes. I may add more routes later on, such as a checkout page.
   - Implement the search function.
   - Get movie posters to display evenly as the number of returned movies changes.
+  - Improve user experience with lazy loading and a landing page.
+  - Make sure elements are responsive.
