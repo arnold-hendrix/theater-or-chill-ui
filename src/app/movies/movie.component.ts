@@ -49,16 +49,16 @@ export class MovieComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getMovies(this.nowPlayingMoviesSub);
     this.getMovies(this.upcomingMoviesSub);
-    for (var movie of this.upcomingMovies) {
+    this.upcomingMovies.forEach(movie => {
       let now = new Date();
       now.setDate(now.getDate() + 7);
-      var releaseDate = new Date(movie.releaseDate);
-      if (releaseDate > now) {
+      var nextWeeksDate = new Date(now);
+      var releaseDate = Date.parse(movie.releaseDate);
+      if (releaseDate > nextWeeksDate.getTime())
         this.comingSoonMovies.push(movie);
-      } else {
+       else 
         this.comingNextWeekMovies.push(movie);
-      }
-    }
+    })
   }
 
   ngOnDestroy(): void {

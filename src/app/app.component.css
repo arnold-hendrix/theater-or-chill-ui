@@ -3,7 +3,7 @@ a {
 }
 
 body {
-  padding-bottom: 8px;
+  padding-bottom: 0px;
 }
 
 .brand-font {
@@ -17,6 +17,7 @@ body {
 
 footer {
   height: 250px;
+  bottom: 0;
 }
 
 .footer-menu {

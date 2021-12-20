@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  width: 100%;
+  margin:auto;
+}
+
+.column {
+  flex: 33.33;
+  padding: 5px;
+}
+
+.center {
+    width: 100%;
+    margin:auto;
+}

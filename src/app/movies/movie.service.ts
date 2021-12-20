@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { IMovie } from './movie';
@@ -19,11 +19,33 @@ export class MovieService {
     );
   }
 
+  public getNowPlayingMovieByTitle(title: any): Observable<IMovie> {
+    return this.http
+      .get<IMovie>(`${this.serverUrlMovie}/nowPlaying`, {
+        params: title,
+      })
+      .pipe(
+        tap((data) => console.log('All', JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+
   public getUpcomingMovies(): Observable<IMovie[]> {
     return this.http.get<IMovie[]>(`${this.serverUrlMovie}/upcoming`).pipe(
       tap((data) => console.log('All', JSON.stringify(data))),
       catchError(this.handleError)
     );
+  }
+
+  public getUpcomingMovieByTitle(title: any): Observable<IMovie> {
+    return this.http
+      .get<IMovie>(`${this.serverUrlMovie}/upcoming`, {
+        params: title,
+      })
+      .pipe(
+        tap((data) => console.log('All', JSON.stringify(data))),
+        catchError(this.handleError)
+      );
   }
 
   handleError(err: HttpErrorResponse) {
