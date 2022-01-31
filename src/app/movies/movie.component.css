@@ -1,4 +1,4 @@
-a {
+/* a {
     text-decoration: none;
 }
 
@@ -23,4 +23,66 @@ img {
 .owl-carousel .owl-item img {
     width: auto;
     height: 100%;
+} */
+
+ a {
+    text-decoration: none;
+}
+
+.flex-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+img {
+  width: 200px;
+  height: 350px;
+  cursor: pointer;
+  padding: 10px 0px 10px 0px;
+}
+
+.item {
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  position: relative;
+}
+
+.movies {
+  padding-top: 25px;
+}
+
+.next {
+  position: absolute;
+  right: 37.5px;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+
+.prev {
+  position: absolute;
+  left: 34px;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+
+.slider-main {
+  position: absolute;
+  width: 200%;
+  /* display:inline-flex */
+}
+
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  padding-top: 0px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

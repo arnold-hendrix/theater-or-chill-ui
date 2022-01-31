@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
 import { IMovie } from './movie';
 import { MovieService } from './movie.service';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-movie',
@@ -10,6 +11,8 @@ import { MovieService } from './movie.service';
   styleUrls: ['./movie.component.css'],
 })
 export class MovieComponent implements OnInit, OnDestroy {
+  faAngleRight = faAngleRight;
+  faAngleLeft = faAngleLeft;
   nowPlayingMovies: IMovie[] = [];
   upcomingMovies: IMovie[] = [];
   comingNextWeekMovies: IMovie[] = [];
@@ -49,16 +52,15 @@ export class MovieComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getMovies(this.nowPlayingMoviesSub);
     this.getMovies(this.upcomingMoviesSub);
-    this.upcomingMovies.forEach(movie => {
+    this.upcomingMovies.forEach((movie) => {
       let now = new Date();
       now.setDate(now.getDate() + 7);
       var nextWeeksDate = new Date(now);
       var releaseDate = Date.parse(movie.releaseDate);
       if (releaseDate > nextWeeksDate.getTime())
         this.comingSoonMovies.push(movie);
-       else 
-        this.comingNextWeekMovies.push(movie);
-    })
+      else this.comingNextWeekMovies.push(movie);
+    });
   }
 
   ngOnDestroy(): void {

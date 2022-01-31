@@ -1,8 +1,32 @@
-.row {
-  display: flex;
+img {
+  width: 200px;
+  height: 350px;
+  cursor: pointer;
+  padding: 10px 0px 10px 0px;
 }
 
-.column {
-  flex: 20%;
+.movie-container-wrap {
+  width: 100%;
+  margin: auto;
+}
+
+.movies {
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  position: relative;
+}
+
+.movie-container {
+  position: relative;
   padding: 5px;
+  width: 200px;
+  height: 250px;
+}
+
+.movie-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

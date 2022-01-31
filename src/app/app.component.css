@@ -3,7 +3,8 @@ a {
 }
 
 body {
-  padding-bottom: 0px;
+  position: relative;
+  min-height: 100vh;
 }
 
 .brand-font {
@@ -15,9 +16,22 @@ body {
   margin-bottom: 10px;
 }
 
-footer {
-  height: 250px;
+.copyright {
+  position: absolute;
+  right: 550px;
+}
+
+#footer {
+  height: 150px;
   bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 10px 10px 0px 10px;
+}
+
+.footer-items {
+  margin: 0 auto;
+  position: relative; 
 }
 
 .footer-menu {
@@ -28,10 +42,6 @@ footer {
   min-width: 0;
   width: 500px;
   display: inline;
-}
-
-header {
-  margin-bottom: 12px;
 }
 
 h6 {
@@ -53,6 +63,10 @@ h6 {
   top: 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+  padding-bottom: 150px;
 }
 
 .menu-item:hover {

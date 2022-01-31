@@ -5,7 +5,7 @@
             <a [routerLink]="['/movies']"><img src="https://img.icons8.com/color/48/000000/theatre-mask.png" /></a>
             <span class="icons8-img"><a href="https://icons8.com/icon/13483/theatre-mask">Theatre Mask icon by
                 Icons8</a></span>
-            <h1><a class="navbar-brand brand-font text-warning" href="#">TheatreOrChill</a></h1>
+            <h1><a class="navbar-brand brand-font text-warning" href="#">TheaterOrChill</a></h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuContent"
               aria-controls="navbarMenuContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -58,16 +58,19 @@
     </header> 
 
     <body class="bg-dark">
-      <div class="container-flex bg-light">
+      <div class="container-flex bg-light main-content">
         <router-outlet></router-outlet>
       </div>
-      <footer class="bg-dark">
-        <div class="container">
+      <footer id="footer" class="bg-dark">
+        <div class="container footer-items">
           <h6 class="text-secondary"><span><a href="#" class="text-warning">
                 <p class="menu-item footer-menu">About</p>
               </a></span> | <span class="footer-menu-item"><a href="#" class="text-warning">
                 <p class="menu-item footer-menu">Contact Us</p>
-              </a></span></h6>
+              </a></span>
+              <p class="copyright">Copyright &copy; {{currentYear}}, TheaterOrChill</p>
+
+            </h6>
         </div>
       </footer>
     </body>

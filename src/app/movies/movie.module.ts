@@ -7,18 +7,28 @@ import { MovieDetailComponent } from './movie-detail.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NowPlayingMoviesComponent } from './now-playing-movies.component';
 import { UpcomingMoviesComponent } from './upcoming-movies.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PrevDirective } from './prev.directive';
+import { NextDirective } from './next.directive';
 
 @NgModule({
-  declarations: [MovieComponent, MovieDetailComponent, NowPlayingMoviesComponent, UpcomingMoviesComponent],
+  declarations: [
+    MovieComponent,
+    MovieDetailComponent,
+    NowPlayingMoviesComponent,
+    UpcomingMoviesComponent,
+    PrevDirective,
+    NextDirective,
+  ],
   imports: [
     CommonModule,
     CarouselModule,
+    FontAwesomeModule,
     FormsModule,
     RouterModule.forChild([
       { path: 'movies', component: MovieComponent },
-      { path: 'movies/nowPlayingMovies', component: NowPlayingMoviesComponent},
-      { path: 'movies/upcomingMovies', component: UpcomingMoviesComponent},
+      { path: 'movies/nowPlayingMovies', component: NowPlayingMoviesComponent },
+      { path: 'movies/upcomingMovies', component: UpcomingMoviesComponent },
       { path: 'movies/:title', component: MovieDetailComponent },
     ]),
   ],

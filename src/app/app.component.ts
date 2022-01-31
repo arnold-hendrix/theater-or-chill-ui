@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
 import { faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,6 +9,7 @@ import { faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   faShoppingBag = faShoppingBag;
   faUser = faUser;
+  currentYear: number = new Date().getFullYear();
   // title = 'theater-or-chill';
   constructor() {}
 }
