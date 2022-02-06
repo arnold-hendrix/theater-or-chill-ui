@@ -1,9 +1,36 @@
-<div class="container">
-    <div class="card" style="width: 24rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+<body>
+  <div class="container">
+    <div class="container-fluid">
+      <div class="row p-5">
+        <div class="col">
+          <div *ngIf="selectedMovie" class="card p-5 movie-card">
+            <img
+              [src]="posterPathBaseUrl + selectedMovie.posterPath"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h1>{{ selectedMovie.title }}</h1>
+              <div class="movie-info">
+                  <strong><p>Release: {{ selectedMovie.releaseDate }}</p></strong>
+                    <strong><p *ngIf="ratingNotAvailable else ratingAvailable">Rating: N/A</p></strong>
+                    <ng-template #ratingAvailable>
+                        <strong><p>Rating: {{ selectedMovie.voteAverage }}/10</p></strong>
+                    </ng-template>
+              </div>
+              <p *ngIf="overviewNotAvailable else overviewAvailable" class="card-text">
+                Overview not available.
+              </p>
+              <ng-template #overviewAvailable>
+                <p class="card-text">
+                {{ selectedMovie.overview }}
+              </p>
+              </ng-template>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+    <p class="attribution">Photo by Pavel Danilyuk from Pexels</p>
+  </div>
+</body>

@@ -1,32 +1,6 @@
-/* a {
-    text-decoration: none;
-}
-
-.carousel-container {
-    padding-bottom: 8px;
-}
-
-.flex-items {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-img {
-    cursor: pointer;
-}
-
-.owl-carousel .owl-stage {
-    display: flex;
-}
-
-.owl-carousel .owl-item img {
-    width: auto;
-    height: 100%;
-} */
-
  a {
     text-decoration: none;
+    z-index: 1;
 }
 
 .flex-items {

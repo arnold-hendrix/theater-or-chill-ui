@@ -1,0 +1,26 @@
+.attribution {
+    display:none;
+}
+
+body {
+    background-image: url(../../assets/pexels-pavel-danilyuk-7234219.jpg);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.movie-card {
+    width: 50%;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { IMovie } from './movie';
 import { MovieService } from './movie.service';
 
@@ -8,22 +7,14 @@ import { MovieService } from './movie.service';
   templateUrl: './upcoming-movies.component.html',
   styleUrls: ['./upcoming-movies.component.css'],
 })
-export class UpcomingMoviesComponent implements OnInit, OnDestroy {
-  upcomingMovies: IMovie[] = [];
-  Sub!: Subscription;
+export class UpcomingMoviesComponent implements OnInit {
+  upcomingMovies!: IMovie[];
   errorMessage = '';
   posterPathBaseUrl: string = 'https://image.tmdb.org/t/p/original/';
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.Sub = this.movieService.getUpcomingMovies().subscribe({
-      next: (movies) => (this.upcomingMovies = movies),
-      error: (err) => (this.errorMessage = err),
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.Sub.unsubscribe();
+     this.upcomingMovies = this.movieService.upcoming;
   }
 }

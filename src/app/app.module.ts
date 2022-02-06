@@ -9,15 +9,19 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieModule } from './movies/movie.module';
 import { MovieComponent } from './movies/movie.component';
+import { AboutComponent } from './about.component';
+import { ContactUsComponent } from './contact-us.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AboutComponent, ContactUsComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', component: MovieComponent}
+      {path: '', component: MovieComponent},
+      {path: 'about', component: AboutComponent},
+      {path: 'contact-us', component: ContactUsComponent},
     ]
     ),
     BrowserAnimationsModule,

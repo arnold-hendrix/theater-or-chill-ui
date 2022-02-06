@@ -31,6 +31,6 @@ import { NextDirective } from './next.directive';
       { path: 'movies/upcomingMovies', component: UpcomingMoviesComponent },
       { path: 'movies/:title', component: MovieDetailComponent },
     ]),
-  ],
+  ]
 })
 export class MovieModule {}

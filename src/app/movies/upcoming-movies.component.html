@@ -4,7 +4,8 @@
             <div class="movie-container-main">
                 <div class="movies" *ngFor="let movie of upcomingMovies">
                     <div class="movie-item" *ngIf="movie.posterPath">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title">
+                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title"
+                        [routerLink]="['/movies', movie.title]">
                     </div>
                 </div>
             </div>

@@ -63,9 +63,9 @@
       </div>
       <footer id="footer" class="bg-dark">
         <div class="container footer-items">
-          <h6 class="text-secondary"><span><a href="#" class="text-warning">
+          <h6 class="text-secondary"><span><a [routerLink]="['/about']" class="text-warning">
                 <p class="menu-item footer-menu">About</p>
-              </a></span> | <span class="footer-menu-item"><a href="#" class="text-warning">
+              </a></span> | <span class="footer-menu-item"><a [routerLink]="['/contact-us']" class="text-warning">
                 <p class="menu-item footer-menu">Contact Us</p>
               </a></span>
               <p class="copyright">Copyright &copy; {{currentYear}}, TheaterOrChill.</p>

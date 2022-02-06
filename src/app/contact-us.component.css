@@ -1,0 +1,21 @@
+.contact-us-section {
+  margin: auto;
+  width:75%;
+  height:100%;
+  padding: 10px;
+  margin-bottom: 150px;
+}
+
+.attribution {
+  display: none;
+}
+
+body {
+  background-image: url("../assets/pexels-pixabay-263564.jpg");
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: bold;
+  padding-top: 25px;
+}
