@@ -4,10 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://theater-or-chill.herokuapp.com/movies',
+  baseUrl: 'http://localhost:8080/movies',
 };
 
-//   baseUrl: 'http://localhost:8080/movies',
 
 /*
  * For easier debugging in development mode, you can import the following file
