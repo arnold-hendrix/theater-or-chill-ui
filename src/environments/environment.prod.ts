@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://theater-or-chill.herokuapp.com/',
+  baseUrl: 'https://theater-or-chill.herokuapp.com/movies',
 };
