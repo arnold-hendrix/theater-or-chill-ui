@@ -1,79 +1,128 @@
-    <header class="bg-dark">
-      <div class="container-fluid">
-        <div class="row nav-container d-flex">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-padding component-margin">
-            <a [routerLink]="['/movies']"><img src="https://img.icons8.com/color/48/000000/theatre-mask.png" /></a>
-            <span class="icons8-img"><a href="https://icons8.com/icon/13483/theatre-mask">Theatre Mask icon by
-                Icons8</a></span>
-            <h1><a class="navbar-brand brand-font text-warning" href="#">TheaterOrChill</a></h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuContent"
-              aria-controls="navbarMenuContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+<header class="bg-dark">
+  <div class="container-fluid">
+    <div class="row">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark navbar-padding component-margin"
+      >
+        <div class="col-xs-12 col-sm-3 col-lg-2 brand-display">
+          <button
+            class="navbar-toggler me-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenuContent"
+            aria-controls="navbarMenuContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="brand-logo-and-name">
+            <a href="#"
+              ><img
+                src="https://img.icons8.com/color/48/000000/theatre-mask.png"
+            /></a>
+            <span class="icons8-img"
+              ><a href="https://icons8.com/icon/13483/theatre-mask"
+                >Theatre Mask icon by Icons8</a
+              ></span
+            >
+            <h1>
+              <a class="navbar-brand brand-font text-warning" href="#"
+                >TheaterOrChill</a
+              >
+            </h1>
+          </div>
+        </div>
+
+        <div class="d-flex col-xs-12 col-sm-7 col-lg-5">
+          <form class="d-flex search-form">
+            <button
+              class="btn btn-outline-warning col-auto"
+              style="margin-left: 10px"
+              type="submit"
+            >
+              Search
             </button>
-            <div class="d-flex search-container">
-              <form class="d-flex search-form">
-                <button class="btn btn-outline-warning" type="submit">Search</button>
-                <input class="form-control form-width me-2 input-form-position" type="search" placeholder="Search Movies"
-                  aria-label="Search">
-              </form>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarMenuContent">
-              <ul class="navbar-nav ms-auto d-flex list-menu">
-                <li class="nav-item">
-                  <a [routerLink]="['/movies']" class="nav-link text-warning">
-                    <p class="menu-item">Movies</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a [routerLink]="['/movies/nowPlayingMovies']" class="nav-link text-warning">
-                    <p class="menu-item">Now Playing</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a [routerLink]="['/movies/upcomingMovies']" class="nav-link text-warning">
-                    <p class="menu-item">Upcoming</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-warning">
-                    <span class="menu-item">
-                      <fa-icon [icon]="faShoppingBag"></fa-icon>
-                    </span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-warning">
-                    <span class="menu-item">
-                      <fa-icon [icon]="faUser"></fa-icon>
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+            <input
+              class="form-control form-width me-2 input-form-position"
+              type="search"
+              placeholder="Search Movies"
+              aria-label="Search"
+            />
+          </form>
         </div>
-      
-      </div>
-    </header> 
 
-    <body class="bg-dark">
-      <div class="container-flex bg-light main-content">
-        <router-outlet></router-outlet>
-      </div>
-      <footer id="footer" class="bg-dark">
-        <div class="container footer-items">
-          <h6 class="text-secondary"><span><a [routerLink]="['/about']" class="text-warning">
-                <p class="menu-item footer-menu">About</p>
-              </a></span> | <span class="footer-menu-item"><a [routerLink]="['/contact-us']" class="text-warning">
-                <p class="menu-item footer-menu">Contact Us</p>
-              </a></span>
-              <p class="copyright">Copyright &copy; {{currentYear}}, TheaterOrChill.</p>
-
-            </h6>
+        <div
+          class="col-xs-12 col-lg-5 collapse navbar-collapse"
+          id="navbarMenuContent"
+        >
+          <ul class="navbar-nav ms-auto d-flex list-menu">
+            <li class="nav-item">
+              <a [routerLink]="['/movies']" class="nav-link text-warning">
+                <p class="menu-item">Movies</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                [routerLink]="['/movies/nowPlayingMovies']"
+                class="nav-link text-warning"
+              >
+                <p class="menu-item">Now Playing</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                [routerLink]="['/movies/upcomingMovies']"
+                class="nav-link text-warning"
+              >
+                <p class="menu-item">Upcoming</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-warning">
+                <span class="menu-item">
+                  <fa-icon [icon]="faShoppingBag"></fa-icon>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-warning">
+                <span class="menu-item">
+                  <fa-icon [icon]="faUser"></fa-icon>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </footer>
-    </body>
-     
-  
+      </nav>
+    </div>
+  </div>
+</header>
 
+<body class="bg-dark">
+  <div class="container-flex bg-light main-content">
+    <router-outlet></router-outlet>
+  </div>
+  <footer id="footer" class="bg-dark">
+    <div class="container">
+      <div class="footer-items">
+        <div class="col-xs-6">
+          <a [routerLink]="['/about']" class="text-warning">
+            <p class="menu-item">About</p>
+          </a>
+        </div>
+        <p class="text-secondary">&nbsp;|&nbsp;</p>
+        <div class="col-xs-6">
+          <a [routerLink]="['/contact-us']" class="text-warning">
+            <p class="menu-item">Contact Us</p>
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="text-secondary">
+          Copyright &copy; {{ currentYear }}, TheaterOrChill.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>

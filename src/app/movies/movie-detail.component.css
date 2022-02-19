@@ -6,21 +6,60 @@ body {
     background-image: url(../../assets/pexels-pavel-danilyuk-7234219.jpg);
 }
 
+.btn {
+    white-space: nowrap;
+    border-radius: 20px;
+    border: 1px;
+}
+
 h1 {
     font-weight: bold;
 }
 
-img {
-  width: auto;
-  height: auto;
+h6 {
+    font-weight: 700;
 }
 
 .movie-card {
-    width: 50%;
+    width: 60%;
 }
 
 .movie-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.purchase-btns {
+    padding-top: 25px;
+}
+
+@media screen and (max-width:1200px) {
+    .purchase-btns {
+        display: block;
+    }
+    .btn {
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width:960px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h6 {
+        font-size: 1rem;
+    }
+    .movie-info {
+        display:block;
+    }
+}
+
+@media screen and (max-width:810px) {
+    .btn-lg {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
 }

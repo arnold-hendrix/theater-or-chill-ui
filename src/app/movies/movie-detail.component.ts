@@ -14,6 +14,8 @@ export class MovieDetailComponent implements OnInit {
   posterPathBaseUrl: string = 'https://image.tmdb.org/t/p/original/';
   ratingNotAvailable: boolean = false;
   overviewNotAvailable: boolean = false;
+  rental: string = "rental";
+  ticket: string = "ticket";
 
   constructor(private route: ActivatedRoute, 
     private movieService: MovieService) {}

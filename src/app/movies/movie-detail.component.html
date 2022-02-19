@@ -2,31 +2,61 @@
   <div class="container">
     <div class="container-fluid">
       <div class="row p-5">
-        <div class="col">
+        <div class="col-xs-6 col-md-10">
           <div *ngIf="selectedMovie" class="card p-5 movie-card">
             <img
               [src]="posterPathBaseUrl + selectedMovie.posterPath"
-              class="card-img-top"
+              class="card-img-top img-fluid"
               alt="..."
             />
             <div class="card-body">
               <h1>{{ selectedMovie.title }}</h1>
               <div class="movie-info">
-                  <strong><p>Release: {{ selectedMovie.releaseDate }}</p></strong>
-                    <strong><p *ngIf="ratingNotAvailable else ratingAvailable">Rating: N/A</p></strong>
-                    <ng-template #ratingAvailable>
-                        <strong><p>Rating: {{ selectedMovie.voteAverage }}/10</p></strong>
-                    </ng-template>
+                <h6>Release: {{ selectedMovie.releaseDate }}</h6>
+                  <h6 *ngIf="ratingNotAvailable; else ratingAvailable">
+                    Rating: N/A
+                  </h6>
+                <ng-template #ratingAvailable>
+                    <h6>Rating: {{ selectedMovie.voteAverage }}/10</h6>
+                </ng-template>
               </div>
-              <p *ngIf="overviewNotAvailable else overviewAvailable" class="card-text">
+              <p
+                *ngIf="overviewNotAvailable; else overviewAvailable"
+                class="card-text"
+              >
                 Overview not available.
               </p>
               <ng-template #overviewAvailable>
                 <p class="card-text">
-                {{ selectedMovie.overview }}
-              </p>
+                  {{ selectedMovie.overview }}
+                </p>
               </ng-template>
+              <div class="purchase-btns movie-info nowrap col-auto">
+                <!-- <a
+                  [routerLink]="[{outlets: {transaction-popup: ['transaction-popup', selectedMovie.title, ticket]}}]"
+                  class="btn btn-lg btn-warning"
+                  >Watch In Theaters</a
+                >
+                <a
+                  [routerLink]="[{outlets: {transaction-popup: ['transaction-popup', selectedMovie.title, rental]}}]"
+                  class="btn btn-lg btn-warning"
+                  >Watch At Home</a
+                > -->
+                <a
+                  class="btn btn-lg btn-outline-warning hover-shadow"
+                  style="font-weight: 600;"
+                  >Watch In Theaters</a
+                >
+                <a
+                  class="btn btn-lg btn-outline-warning hover-shadow"
+                  style="font-weight: 600;"
+                  >Watch At Home</a
+                >
+              </div>
             </div>
+          </div>
+          <div class="col-md-2">
+            <router-outlet name="transaction-popup"></router-outlet>
           </div>
         </div>
       </div>

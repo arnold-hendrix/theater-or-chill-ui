@@ -1,140 +1,101 @@
-<!-- <div class="container carousel-container">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>In Theaters</strong></h5>
-                </div>
-                <div><a [routerLink]="['/movies/nowPlayingMovies']">view all</a></div>
-            </div>
-
-            <owl-carousel-o [options]="customOptions">
-                <ng-container *ngFor="let movie of nowPlayingMovies">
-                    <ng-template *ngIf="movie.posterPath" carouselSlide [id]="movie.title">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title"
-                        [routerLink]="['/movies', movie.title]">
-                    </ng-template>
-                </ng-container>
-            </owl-carousel-o>
-
-        </div>
-    </div>
-
-    <div class="container-fluid carousel-container">
-        <div class="row">
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>Coming Next Week</strong></h5>
-                </div>
-                <div><a [routerLink]="['/movies/upcomingMovies']">view all</a></div>
-            </div>
-
-            <owl-carousel-o [options]="customOptions">
-                <ng-container *ngFor="let movie of upcomingMovies">
-                    <ng-template *ngIf="movie.posterPath" carouselSlide [id]="movie.title">
-                        <img  [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title" 
-                        [routerLink]="['/movies', movie.title]">
-                    </ng-template>
-                </ng-container>
-            </owl-carousel-o>
-
-        </div>
-    </div>
-
-    <div class="container-fluid carousel-container">
-        <div class="row">
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>Coming Soon</strong></h5>
-                </div>
-                <div><a [routerLink]="['/movies/upcomingMovies']">view all</a></div>
-            </div>
-
-            <owl-carousel-o [options]="customOptions">
-                <ng-container *ngFor="let movie of upcomingMovies">
-                    <ng-template *ngIf="movie.posterPath" carouselSlide [id]="movie.title">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title" [title]="movie.title"
-                        [routerLink]="['/movies', movie.title]">
-                    </ng-template>
-                </ng-container>
-            </owl-carousel-o>
-
-        </div>
-    </div>
-</div> -->
-<section class=" container movies">
-    <div class="container-fluid">
-        <div class="slider-wrap" >
-            <div class="slider-main">
-                <div class="item" *ngFor="let movie of nowPlayingMovies">
-                    <div class="title" *ngIf="movie.posterPath">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt] = "movie.title" 
-                        [routerLink]="['/movies', movie.title]">
-                    </div>
-                </div>
-            </div>
-            <div class="prev-next-buttons">
-                <button type="button" class="prev" appPrev><fa-icon [icon]="faAngleLeft"></fa-icon></button>
-                <button type="button" class="next" appNext><fa-icon [icon]="faAngleRight"></fa-icon></button>
-            </div>
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>In Theaters</strong></h5>
-                </div>
-                <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
+<section class="container movies">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
         <div class="slider-wrap">
-            <div class="slider-main">
-                <div class="item" *ngFor="let movie of upcomingMovies">
-                    <div class="title" *ngIf="movie.posterPath">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title"
-                            [routerLink]="['/movies', movie.title]">
-                    </div>
-                </div>
+          <div class="slider-main">
+            <div class="item" *ngFor="let movie of nowPlayingMovies">
+              <div class="title" *ngIf="movie.posterPath">
+                <img
+                  [src]="posterPathBaseUrl + movie.posterPath"
+                  [alt]="movie.title"
+                  [routerLink]="['/movies', movie.title]"
+                />
+              </div>
             </div>
-            <div class="prev-next-buttons">
-                <button type="button" class="prev" appPrev>
-                    <fa-icon [icon]="faAngleLeft"></fa-icon>
-                </button>
-                <button type="button" class="next" appNext>
-                    <fa-icon [icon]="faAngleRight"></fa-icon>
-                </button>
+          </div>
+          <div class="prev-next-buttons">
+            <button type="button" class="prev" appPrev>
+              <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </button>
+            <button type="button" class="next" appNext>
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </button>
+          </div>
+          <div class="flex-items">
+            <div class="text-dark">
+              <h5><strong>In Theaters</strong></h5>
             </div>
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>Coming Soon</strong></h5>
-                </div>
-               <a [routerLink]="['/movies/upcomingMovies']">view all</a>
-            </div>
+            <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="container-fluid">
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
         <div class="slider-wrap">
-            <div class="slider-main">
-                <div class="item" *ngFor="let movie of nowPlayingMovies">
-                    <div class="title" *ngIf="movie.posterPath">
-                        <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title"
-                            [routerLink]="['/movies', movie.title]">
-                    </div>
-                </div>
+          <div class="slider-main">
+            <div class="item" *ngFor="let movie of upcomingMovies">
+              <div class="title" *ngIf="movie.posterPath">
+                <img
+                  [src]="posterPathBaseUrl + movie.posterPath"
+                  [alt]="movie.title"
+                  [routerLink]="['/movies', movie.title]"
+                />
+              </div>
             </div>
-            <div class="prev-next-buttons">
-                <button type="button" class="prev" appPrev>
-                    <fa-icon [icon]="faAngleLeft"></fa-icon>
-                </button>
-                <button type="button" class="next" appNext>
-                    <fa-icon [icon]="faAngleRight"></fa-icon>
-                </button>
+          </div>
+          <div class="prev-next-buttons">
+            <button type="button" class="prev" appPrev>
+              <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </button>
+            <button type="button" class="next" appNext>
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </button>
+          </div>
+          <div class="flex-items">
+            <div class="text-dark">
+              <h5><strong>Coming Soon</strong></h5>
             </div>
-            <div class="flex-items">
-                <div class="text-dark">
-                    <h5><strong>Movie News and Headlines</strong></h5>
-                </div>
-                <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
-            </div>
+            <a [routerLink]="['/movies/upcomingMovies']">view all</a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="slider-wrap">
+          <div class="slider-main">
+            <div class="item" *ngFor="let movie of nowPlayingMovies">
+              <div class="title" *ngIf="movie.posterPath">
+                <img
+                  [src]="posterPathBaseUrl + movie.posterPath"
+                  [alt]="movie.title"
+                  [routerLink]="['/movies', movie.title]"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="prev-next-buttons">
+            <button type="button" class="prev" appPrev>
+              <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </button>
+            <button type="button" class="next" appNext>
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </button>
+          </div>
+          <div class="flex-items">
+            <div class="text-dark">
+              <h5><strong>Movie News and Headlines</strong></h5>
+            </div>
+            <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

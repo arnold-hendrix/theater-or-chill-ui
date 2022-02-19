@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="movie-container-wrap">
             <div class="movie-container-main">
+                <h5><strong>Upcoming</strong></h5>
                 <div class="movies" *ngFor="let movie of upcomingMovies">
                     <div class="movie-item" *ngIf="movie.posterPath">
                         <img [src]="posterPathBaseUrl + movie.posterPath" [alt]="movie.title"
