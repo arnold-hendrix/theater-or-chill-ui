@@ -1,4 +1,17 @@
-Front end Angular application for theater-or-chill movie app. Still a work in progress but I am getting there. 
+Front end Angular application for theater-or-chill movie app: https://theater-or-chill.herokuapp.com/ 
+
+UPDATE 2022-02-19
+  - the app is live on heroku. 
+  - I worked on the responsiveness before deploying the app, but having navigated to the url from my phone, I can see that the mobile view needs work.
+ 
+A friend recommended I deploy the app even though I am still working on some things. He said it's good to have something live that people can interact with.
+
+STILL TO DO
+  - search bar
+  - lazy-loading
+  - mobile view responsivesness
+  - cart, account, transaction confirmation, print ticket, and watch movie routes
+  - router guards.
 
 UPDATE - 2022-02-05
   - I made the app run more effeciently by adding getters and setters to the service class - reduced the number of calls made to the backend
