@@ -10,6 +10,7 @@
 
 body {
   background-image: url("../assets/pexels-pavel-danilyuk-7234214.jpg");
+  background-size: cover;
 }
 
 .heading {

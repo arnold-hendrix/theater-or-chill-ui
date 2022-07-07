@@ -3,14 +3,12 @@ a {
 }
 
 body {
-  position: relative;
   min-height: 100vh;
-}
-
-.brand-display {
-  display: flex;
-  justify-content:space-between;
-  align-items:flex-start;
+  display: grid;
+  grid-template-rows: 90px 1fr 70px;
+  grid-template-areas: "header"
+                        "content"
+                        "footer";
 }
 
 .brand-font {
@@ -33,12 +31,12 @@ body {
   display: flex;
 }
 
-#footer {
+.footer {
   height: 150px;
   bottom: 0;
-  position: absolute;
   width: 100%;
   padding: 10px 10px 0px 10px;
+  grid-area: footer;
 }
 
 .footer-items {
@@ -60,12 +58,13 @@ h6 {
 
 /* disable scrolling on mobile */
 
-header, html, body {
-  overflow-x: hidden;
+.header {
+  grid-area: header;
+  display: flex;
 }
 
-header, body {
-  position: relative;
+header, html, body {
+  overflow-x: hidden;
 }
 
 .icons8-img {
@@ -83,6 +82,10 @@ header, body {
   top: 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.main {
+  grid-area: content;
 }
 
 .main-content {

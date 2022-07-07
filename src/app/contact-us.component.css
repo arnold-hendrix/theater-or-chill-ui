@@ -6,7 +6,7 @@ body {
   background-image: url("../assets/pexels-pixabay-263564.jpg");
   min-height: 100vh;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 h1 {
