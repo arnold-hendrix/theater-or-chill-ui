@@ -1,14 +1,17 @@
 a {
   text-decoration: none;
+  color: black;
 }
 
 body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: 90px 1fr 70px;
-  grid-template-areas: "header"
-                        "content"
-                        "footer";
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  background: linear-gradient( rgba(226, 204, 30, 0.2), rgba(44, 62, 80, 0.8));
 }
 
 .brand-font {
@@ -16,34 +19,21 @@ body {
   font-weight: bold;
 }
 
-.brand-logo-and-name {
-  display: flex;
-}
-
 .component-margin {
   margin-bottom: 10px;
 }
 
-.copyright {
-  position: relative;
-  left: 40%;
+.copyright, .links {
   margin: auto;
-  display: flex;
 }
 
 .footer {
-  height: 150px;
-  bottom: 0;
-  width: 100%;
-  padding: 10px 10px 0px 10px;
   grid-area: footer;
 }
 
 .footer-items {
-  margin: auto;
-  position: relative;
   display: flex;
-  left: 44%;
+  flex-direction: column;
   padding-top: 5px;
 }
 
@@ -56,15 +46,19 @@ h6 {
   padding: 15px 0px 0px 575px;
 }
 
-/* disable scrolling on mobile */
-
 .header {
   grid-area: header;
-  display: flex;
 }
 
-header, html, body {
-  overflow-x: hidden;
+.header-items {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 12px;
+}
+
+html, body {
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .icons8-img {
@@ -74,6 +68,10 @@ header, html, body {
 .input-form-position {
   position: relative;
   left: 10px;
+}
+
+.main-menu {
+  flex: 0 1 auto;
 }
 
 .list-menu {
@@ -86,14 +84,15 @@ header, html, body {
 
 .main {
   grid-area: content;
+  padding-bottom: 50px;
 }
 
-.main-content {
-  padding-bottom: 150px;
+.main-menu {
+  flex: 1 0 1fr;
 }
 
 .menu-item:hover {
-  color: white;
+  color: orange;
 }
 
 .navbar-padding {
@@ -101,12 +100,17 @@ header, html, body {
   padding-right: 15px;
 }
 
-.nav-item {
-  text-align:center;
-}
-
 .search-form {
-  position: relative;
   left: 20px;
   top: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+@media only screen and (min-width:600px) {
+   .navbar-toggler {
+    display: none;
+   }
 }

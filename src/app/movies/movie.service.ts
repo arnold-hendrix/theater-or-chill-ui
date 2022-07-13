@@ -9,27 +9,22 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class MovieService {
-  // access backend url through environment object.
   private baseUrl = environment.baseUrl;
 
   private _nowPlaying!: IMovie[];
   private _upcoming!: IMovie[];
 
   public get nowPlaying(): IMovie[] {
-    // use getter to access Now Playing movies.
     return this._nowPlaying;
   }
   public set nowPlaying(value: IMovie[]) {
-    // use setter to save Now Playing movies to reduce the number of server calls.
     this._nowPlaying = value;
   }
 
   public get upcoming(): IMovie[] {
-    // use getter to access Upcoming movies.
     return this._upcoming;
   }
   public set upcoming(value: IMovie[]) {
-    // use setter to save Upcoming movies to reduce the number of server calls.
     this._upcoming = value;
   }
 
@@ -54,12 +49,11 @@ export class MovieService {
   handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
-      // check if error is originating from the client side.
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
       errorMessage = `Server returned code: ${err.status}, error message is ${err.message}`;
     }
-    console.error(errorMessage); // display error message to the console.
-    return throwError(errorMessage); // throw an error to the calling code.
+    console.error(errorMessage);
+    return throwError(errorMessage);
   }
 }

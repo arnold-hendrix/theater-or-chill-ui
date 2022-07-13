@@ -9,7 +9,7 @@ export class PrevDirective {
 
   @HostListener('click')
   prevFunc() {
-    var element = this.elementRef.nativeElement.parentElement.parentElement.children[0];
+    var element = this.elementRef.nativeElement.parentElement.children[1];
     var items = element.getElementsByClassName("item");
     element.prepend(items[items.length - 1]);
   }

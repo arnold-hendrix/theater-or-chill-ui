@@ -2,11 +2,6 @@
   display: none;
 }
 
-body {
-  background-image: url(../../assets/pexels-pavel-danilyuk-7234219.jpg);
-  background-size: cover;
-}
-
 .btn {
   white-space: nowrap;
   border-radius: 20px;

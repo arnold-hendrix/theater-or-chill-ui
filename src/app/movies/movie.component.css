@@ -1,75 +1,114 @@
- * {
-   box-sizing: border-box;
- }
- 
- a {
-    text-decoration: none;
-    z-index: 1;
+a {
+  text-decoration: none;
+  z-index: 1;
 }
 
-/* .container-fluid {
+.article-wrapper {
+  flex: 0 0 33%;
   display: flex;
-} */
+  flex-direction: column;
+  padding: 0px 20px;
+}
 
-.flex-items {
-    /* display: flex; */
-    justify-content:space-between;
-    align-items: center;
-}  
+.carousel-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 6rem;
+  align-content: center;
+  overflow: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 
-.flex-items:nth-of-type(2) {
-    display: flex;
-    justify-content:space-evenly;
+.carousel-main::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-wrapper {
+  grid-area: wrapper;
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 100px;
+  height: auto;
+}
+
+.content-labels {
+  display: flex;
+  justify-content: space-between;
+  grid-area: labels;
+  padding-top: 24px;
+}
+
+.content-labels p {
+  flex: 0 0 auto;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "labels"
+    "wrapper";
+}
+
+.image, .title, .description {
+  width: 80%;
 }
 
 img {
-  width: 200px;
-  height: 350px;
+  width: 90%;
+  height: 100%;
   cursor: pointer;
   padding: 10px 0px 10px 0px;
 }
 
 .item {
-  display: inline-block;
-  width: 250px;
-  height: 400px;
-  position: relative;
+  flex: 0 0 50%;
 }
 
-.movies {
-  padding-top: 25px;
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 85%;
+}
+
+.news-wrapper {
+  grid-area: wrapper;
+  display: flex;
+  justify-content: space-between;
 }
 
 .next {
-  /* position: absolute; */
-  right: 37.5px;
-  top: 48%;
-  transform: translate(-50%, -50%);
+  margin-left: 10px;
+}
+
+.poster {
+  height: 100%;
+}
+
+.prev,
+.next {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  overflow: hidden;
+  z-index: 100;
 }
 
 .prev {
-  /* position: absolute; */
-  left: 34px;
-  top: 48%;
-  transform: translate(-50%, -50%);
+  margin-right: 10px;
 }
 
-.slider-main {
-  /* position: absolute; */
-  width: 100%;
+section {
+  padding-top: 20px;
 }
 
-.slider-wrap {
-  /* position: relative; */
-  overflow: hidden;
-  height: 400px;
-  padding-top: 0px;
-  display: flex;
-}
-
-.title {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+@media only screen and (min-width: 600px) {
+  .item {
+    flex: 0 0 20%;
+  }
 }

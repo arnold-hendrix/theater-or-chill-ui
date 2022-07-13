@@ -1,89 +1,113 @@
-<section class="container movies">
-  <div class="container-fluid">
-    <div class="slider-wrap">
-      <div class="flex-items slider-main">
-        <div class="item" *ngFor="let movie of nowPlayingMovies">
-          <div class="title" *ngIf="movie.posterPath">
-            <img
-              [src]="posterPathBaseUrl + movie.posterPath"
-              [alt]="movie.title"
-              [routerLink]="['/movies', movie.title]"
-            />
-          </div>
-        </div>
+<div class="container main">
+  <section class="now-playing">
+    <div class="content-wrapper">
+      <div class="content-labels">
+        <p>Now Playing</p>
+        <p><a href="#"> See All</a></p>
       </div>
-      <div class="flex-items prev-next-buttons">
+      <div class="carousel-wrapper">
         <button type="button" class="prev" appPrev>
           <fa-icon [icon]="faAngleLeft"></fa-icon>
         </button>
+        <div class="carousel-main">
+          <div class="item" *ngFor="let movie of nowPlayingMovies">
+            <div class="poster" *ngIf="movie.posterPath">
+              <img
+                [src]="posterPathBaseUrl + movie.posterPath"
+                [alt]="movie.title"
+                [routerLink]="['/movies', movie.title]"
+              />
+            </div>
+          </div>
+        </div>
         <button type="button" class="next" appNext>
           <fa-icon [icon]="faAngleRight"></fa-icon>
         </button>
       </div>
-      <div class="flex-items">
-        <div class="text-dark">
-          <h5><strong>In Theaters</strong></h5>
-        </div>
-        <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
-      </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="slider-wrap">
-      <div class="slider-main">
-        <div class="item" *ngFor="let movie of upcomingMovies">
-          <div class="title" *ngIf="movie.posterPath">
-            <img
-              [src]="posterPathBaseUrl + movie.posterPath"
-              [alt]="movie.title"
-              [routerLink]="['/movies', movie.title]"
-            />
-          </div>
-        </div>
+  </section>
+
+  <section class="upcoming">
+    <div class="content-wrapper">
+      <div class="content-labels">
+        <p>Upcoming</p>
+        <p><a href="#"> See All</a></p>
       </div>
-      <div class="prev-next-buttons">
+      <div class="carousel-wrapper">
         <button type="button" class="prev" appPrev>
           <fa-icon [icon]="faAngleLeft"></fa-icon>
         </button>
+        <div class="carousel-main">
+          <div class="item" *ngFor="let movie of upcomingMovies">
+            <div class="poster" *ngIf="movie.posterPath">
+              <img
+                [src]="posterPathBaseUrl + movie.posterPath"
+                [alt]="movie.title"
+                [routerLink]="['/movies', movie.title]"
+              />
+            </div>
+          </div>
+        </div>
         <button type="button" class="next" appNext>
           <fa-icon [icon]="faAngleRight"></fa-icon>
         </button>
       </div>
-      <div class="flex-items">
-        <div class="text-dark">
-          <h5><strong>Coming Soon</strong></h5>
-        </div>
-        <a [routerLink]="['/movies/upcomingMovies']">view all</a>
-      </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="slider-wrap">
-      <div class="slider-main">
-        <div class="item" *ngFor="let movie of nowPlayingMovies">
-          <div class="title" *ngIf="movie.posterPath">
+  </section>
+
+  <section class="container movie-news">
+    <div class="content-wrapper">
+      <div class="content-labels">
+        <p>Latest Movie News And Headlines</p>
+        <p><a href="#"> See All</a></p>
+      </div>
+      <div class="news-wrapper">
+        <div class="article-wrapper">
+          <div class="image">
             <img
-              [src]="posterPathBaseUrl + movie.posterPath"
-              [alt]="movie.title"
-              [routerLink]="['/movies', movie.title]"
+              src="{{ featuredArticleOne.urlToImage }}"
+              class="card-img-top"
+              alt="..."
             />
+          </div>
+          <div class="title">
+            <h3>{{ featuredArticleOne.title }}</h3>
+          </div>
+          <div class="description">
+            <p>{{ featuredArticleOne.description }}</p>
+          </div>
+        </div>
+        <div class="article-wrapper">
+          <div class="image">
+            <img
+              src="{{ featuredArticleTwo.urlToImage }}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="title">
+            <h3>{{ featuredArticleTwo.title }}</h3>
+          </div>
+          <div class="description">
+            <p>{{ featuredArticleTwo.description }}</p>
+          </div>
+        </div>
+        <div class="article-wrapper">
+          <div class="image">
+            <img
+              src="{{ featuredArticleThree.urlToImage }}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="title">
+            <h3>{{ featuredArticleThree.title }}</h3>
+          </div>
+          <div class="description">
+            <p>{{ featuredArticleThree.description }}</p>
           </div>
         </div>
       </div>
-      <div class="prev-next-buttons">
-        <button type="button" class="prev" appPrev>
-          <fa-icon [icon]="faAngleLeft"></fa-icon>
-        </button>
-        <button type="button" class="next" appNext>
-          <fa-icon [icon]="faAngleRight"></fa-icon>
-        </button>
-      </div>
-      <div class="flex-items">
-        <div class="text-dark">
-          <h5><strong>Movie News and Headlines</strong></h5>
-        </div>
-        <a [routerLink]="['/movies/nowPlayingMovies']">view all</a>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
