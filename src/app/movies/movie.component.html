@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <div class="content-labels">
         <p>Now Playing</p>
-        <p><a href="#"> See All</a></p>
+        <p><a [routerLink]="['/movies/nowPlayingMovies']"> See All</a></p>
       </div>
       <div class="carousel-wrapper">
         <button type="button" class="prev" appPrev>
@@ -31,7 +31,7 @@
     <div class="content-wrapper">
       <div class="content-labels">
         <p>Upcoming</p>
-        <p><a href="#"> See All</a></p>
+        <p><a [routerLink]="['/movies/upcomingMovies']"> See All</a></p>
       </div>
       <div class="carousel-wrapper">
         <button type="button" class="prev" appPrev>
